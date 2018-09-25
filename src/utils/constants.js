@@ -10,4 +10,3 @@ export const CITY_QUERY_INFO_REQUEST = 'CITY_INFO_REQUEST';
 export const CITY_QUERY_INFO_SUCCESS = 'CITY_INFO_SUCCESS';
 export const CITY_QUERY_INFO_FAIL = 'CITY_INFO_FAIL';
 export const searchUrl = 'https://developers.zomato.com/api/v2.1/search?apikey=6518cab0f49d202216d869fd8be65d3a&';
-// chinese&lat=41.8842900000&lon=-87.6486400000

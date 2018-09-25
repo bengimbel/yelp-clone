@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import Header from './Header';
-import CardList from './CardList';
 import { connect } from 'react-redux';
 import fetchPopularFoodByCity from '../actions/FetchFoodData'; 
 import Searchbar from './Searchbar';
@@ -17,16 +15,14 @@ class Application extends Component {
     componentWillMount() {
 
     }
+    
     renderList() {
         console.log(this.props.cityQueryData, 'this.props.cityQueryData');
         const { cityQueryData } = this.props;
         if(cityQueryData.data && cityQueryData.isFetching != null) {
-            console.log('wegotbusiness');
             const { restaurants } = this.props.cityQueryData.data;
             return (
                 restaurants.map((restaurant) => {
-                    console.log(restaurant, 'resturant');
-
                     return (
                         <li key={restaurant.restaurant.id}>{restaurant.restaurant.name}</li>
                     )

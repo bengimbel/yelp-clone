@@ -4,7 +4,7 @@ export default class CardList extends Component {
     render() {
         return (
             <div>
-                <p>Hello World</p>
+                <p>not started</p>
             </div>
         );
     }

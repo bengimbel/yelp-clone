@@ -57,41 +57,25 @@ class Searchbar extends Component {
         let addressObject = this.autocomplete.getPlace();
         let address = addressObject.address_components;
 
-        console.log(addressObject, 'address object');
-        console.log(addressObject.geometry.location.lat(), 'LAT');
-        console.log(addressObject.geometry.location.lng(),'LNG');
         let lat = addressObject.geometry.location.lat();
         let lng = addressObject.geometry.location.lng();
-        console.log(lat, 'LAT');
-        console.log(lng,'LNG');
-        console.log(address, 'address');
+
         // Check if address is valid
         if (address) {
           // Set State
-          console.log('finshed');
           this.setState({
               city: address[0].long_name,
               cityInput: addressObject.formatted_address,
               cityLat: lat,
               cityLng: lng
             });
-          console.log(this.state, 'this.state');
         }
       }
 
 
       onFormCitySubmit(e) {
         e.preventDefault()
-    
         this.props.getCityQueryInfo(this.state)
-            // this.setState({
-            //     cityData: this.props.cityData.data.location_suggestions
-            // })
-        
-        //    const entityId = this.state.data[0].entity_id
-        //    const entityType = this.state.data[0].entity_type
-        //    this.props.fetchPopularFoodByCity(entityId, entityType);
-
         this.setState({
             cityInput: '',
             cuisineInput: ''
@@ -136,7 +120,7 @@ function mapDispatchToProps(dispatch) {
 const mapStateToProps = (state) => {
     return {
         foodData: state.foodData,
-        cityData: state.cityData
+        cityQueryData: state.cityQueryData
     };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Searchbar)

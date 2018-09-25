@@ -5,10 +5,7 @@ export default class Header extends Component {
         return (
             <div>
                 <ul>
-                    <li>NFL</li>
-                    <li>NBA</li>
-                    <li>NHL</li>
-                    <li>MLB</li>
+                    <li>Not started</li>
                 </ul>
             </div>
         );
