@@ -25,7 +25,7 @@ class Searchbar extends Component {
     }
 
     initAutocomplete() {
-        // Declare Options For Autocomplete
+        // Declare Options For Autocomplete feature
         var options = {
           types: ['(cities)'],
         };
